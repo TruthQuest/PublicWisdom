@@ -1,4 +1,4 @@
-<h1 style="color: navy;">Foreign Assistance Data Exploration (FADE)</h1>
+<h1 style="color: navy;">Foreign Assistance Data Exploration Collaborative (FADEC)</h1>
 
 ## _Exploring Connections between Development Inputs and Rule of Law Outputs_
 
@@ -9,7 +9,7 @@ This code explores rule of law country data and compares it to obligation and di
 
 ## Requirements
 
-FADE recommends [Spyder IDE](https://www.spyder-ide.org/) to run.
+FADEC recommends [Spyder IDE](https://www.spyder-ide.org/) to run.
 
 This project requires the following Python packages:
 
