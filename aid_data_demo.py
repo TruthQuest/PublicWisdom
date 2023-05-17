@@ -18,12 +18,13 @@ import pandas as pd
 packages = [
     ("aiofiles",),
     ("aiohttp",),
-    ("asyncio",),
     ("altair", "alt"),
+    ("asyncio",),
     ("chardet",),
     ("codecs",),
     ("colorama",),
     ("concurrent",),
+    ("concurrent.futures", None, ["ThreadPoolExecutor", "as_completed", "ProcessPoolExecutor"]),
     ("csv",),
     ("dask", None, ["delayed"]),
     ("dask.dataframe", "dd"),
@@ -34,38 +35,36 @@ packages = [
     ("fuzzywuzzy", None, ["fuzz"]),
     ("glob",),
     ("hashlib",),
-    ("io",),
     ("importlib",),
+    ("io",),
     ("missingno", "msno"),
     ("nest_asyncio",),
     ("numpy", "np"),
     ("os",),
     ("PIL", None, ["Image"]),
     ("pandas", "pd"),
-    ("re",),
-    ("requests",),
-    ("rapidfuzz", None, ["process"]),
-    ("spacy",),
+    ("pathlib",),
     ("plotly.express", "px"),
     ("plotly.graph_objects", "go"),
-    ("textacy",),
-    ("tempfile",),
-    ("time",),
-    ("tabulate", "tabulate"),
-    ("termcolor", None, ["colored"]),
-    ("translate", None, ["Translator"]),
-    ("tqdm",),
-    ("tqdm.auto", None, ["tqdm"]),
-    ("urllib",),
-    ("webbrowser",),
-    ("concurrent.futures", None, ["ThreadPoolExecutor", "as_completed", "ProcessPoolExecutor"]),
-    ("subprocess",),
-    ("sys",),
-    ("sqlalchemy==1.4.27",),
+    ("rapidfuzz", None, ["process"]),
+    ("re",),
     ("requests",),
     ("spacy",),
+    ("sqlalchemy", None, ["create_engine", "text"]),
+    ("sqlalchemy==1.4.27",),
+    ("subprocess",),
+    ("sys",),
+    ("tabulate", "tabulate"),
     ("tabulate",),
-    ("pathlib",),
+    ("tempfile",),
+    ("termcolor", None, ["colored"]),
+    ("textacy",),
+    ("time",),
+    ("tqdm",),
+    ("tqdm.auto", None, ["tqdm"]),
+    ("translate", None, ["Translator"]),
+    ("urllib",),
+    ("webbrowser",),
 ]
 
 def import_and_install(package):
@@ -138,23 +137,6 @@ for package in packages:
             print(f"Error: {e}. Failed to import the '{pkg}' package.")
 
 module_df = pd.DataFrame(modules)
-
-
-problem_packages = [
-    "sqlalchemy==1.4.27",
-    "requests",
-    "spacy", "tabulate", "pathlib"
-]
-
-for package in problem_packages:
-    if package not in installed_packages:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-        
-from sqlalchemy import create_engine, text
-from tabulate import tabulate
-import requests
-import spacy
-from pathlib import Path
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
