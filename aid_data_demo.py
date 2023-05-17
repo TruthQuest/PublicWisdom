@@ -9,22 +9,63 @@ the views or opinions of any group or organization.
 This code is provided as-is, without warranty of any kind, express or implied.
 """
 #########################
-import pkg_resources
 import importlib
 import subprocess
 import sys
-import os
+import pkg_resources
 import pandas as pd
 
 packages = [
-            "aiofiles", "aiohttp", "asyncio", ("altair", "alt"), "chardet", "codecs", "colorama", "concurrent", "csv", ("dask", None, ["delayed"]),
-            ("dask.dataframe", "dd"), ("datetime", "dt", ["date"]), "dill", "fastparquet", ("functools", None, ["partial"]), ("fuzzywuzzy", None, ["fuzz"]),
-            "glob", "hashlib", "io", "importlib", ("missingno", "msno"), "nest_asyncio", ("numpy", "np"), "os", ("PIL", None, ["Image"]), ("pandas", "pd"),
-            "re", "requests", ("requests", None, ["get"]), ("rapidfuzz", None, ["process"]), "spacy", ("spacy", None, ["load"]), ("plotly.express", "px"), ("plotly.graph_objects", "go"),
-            "textacy", "tempfile", "time", ("tabulate", "tabulate"),("tabulate", None, ["tabulate"]), ("termcolor", None, ["colored"]), ("translate", None, ["Translator"]),
-            "tqdm", ("tqdm.auto", None, ["tqdm"]), "urllib", "webbrowser", ("concurrent.futures", None, ["ThreadPoolExecutor", "as_completed", "ProcessPoolExecutor"]),
-            "subprocess", "sys",
-
+    ("aiofiles",),
+    ("aiohttp",),
+    ("asyncio",),
+    ("altair", "alt"),
+    ("chardet",),
+    ("codecs",),
+    ("colorama",),
+    ("concurrent",),
+    ("csv",),
+    ("dask", None, ["delayed"]),
+    ("dask.dataframe", "dd"),
+    ("datetime", "dt", ["date"]),
+    ("dill",),
+    ("fastparquet",),
+    ("functools", None, ["partial"]),
+    ("fuzzywuzzy", None, ["fuzz"]),
+    ("glob",),
+    ("hashlib",),
+    ("io",),
+    ("importlib",),
+    ("missingno", "msno"),
+    ("nest_asyncio",),
+    ("numpy", "np"),
+    ("os",),
+    ("PIL", None, ["Image"]),
+    ("pandas", "pd"),
+    ("re",),
+    ("requests",),
+    ("rapidfuzz", None, ["process"]),
+    ("spacy",),
+    ("plotly.express", "px"),
+    ("plotly.graph_objects", "go"),
+    ("textacy",),
+    ("tempfile",),
+    ("time",),
+    ("tabulate", "tabulate"),
+    ("termcolor", None, ["colored"]),
+    ("translate", None, ["Translator"]),
+    ("tqdm",),
+    ("tqdm.auto", None, ["tqdm"]),
+    ("urllib",),
+    ("webbrowser",),
+    ("concurrent.futures", None, ["ThreadPoolExecutor", "as_completed", "ProcessPoolExecutor"]),
+    ("subprocess",),
+    ("sys",),
+    ("sqlalchemy==1.4.27",),
+    ("requests",),
+    ("spacy",),
+    ("tabulate",),
+    ("pathlib",),
 ]
 
 def import_and_install(package):
@@ -62,8 +103,7 @@ def update_globals(pkg, alias=None, submodules=None):
     except Exception as e:
         print(f"Error: {e}. Failed to install the '{pkg}' package.")
 
-
-installed_packages = {pkg.key for pkg in pkg_resources.working_set}
+installed_packages = {pkg.key for pkg in pkg_resources.working_set
 installed_packages = sorted(list(installed_packages))
 
 
