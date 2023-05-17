@@ -16,12 +16,13 @@ This project requires the following Python packages:
 ```sh
 aiofiles
 aiohttp
-asyncio
 altair (as 'alt')
+asyncio
 chardet
 codecs
 colorama
 concurrent
+concurrent.futures (with 'ThreadPoolExecutor', 'as_completed', and 'ProcessPoolExecutor')
 dask (with 'delayed')
 dask.dataframe (as 'dd')
 datetime (as 'dt' with 'date')
@@ -31,8 +32,8 @@ functools (with 'partial')
 fuzzywuzzy (with 'fuzz')
 glob
 hashlib
-io
 importlib
+io
 missingno (as 'msno')
 nest_asyncio
 numpy (as 'np')
@@ -42,16 +43,15 @@ plotly.express (as 'px')
 plotly.graph_objects (as 'go')
 rapidfuzz (with 'process')
 spacy (with 'load')
-textacy
-tempfile
+subprocess
 tabulate (as 'tabulate' with 'tabulate')
+tempfile
 termcolor (with 'colored')
-translate (with 'Translator')
+textacy
 tqdm (with 'tqdm' and 'tqdm.auto')
+translate (with 'Translator')
 urllib
 webbrowser
-concurrent.futures (with 'ThreadPoolExecutor', 'as_completed', and 'ProcessPoolExecutor')
-subprocess
 ```
 ## Usage
 To run the code, simply run the aid_data_demo.py script.
